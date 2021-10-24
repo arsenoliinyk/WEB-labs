@@ -1,2 +1,2 @@
 # WEB-labs
-WEB-labs
+Lab_6

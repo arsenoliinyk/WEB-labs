@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import { LinkingWrapper } from './Navigation.styles';
 import Home from '../Home/Home';
+import Catalog from '../Catalog/Catalog.js';
 
 const Navigation = () => (
     <Router>
@@ -22,16 +23,16 @@ const Navigation = () => (
         </ul>
         <Switch>
             <Route path="/catalog">
-                <div>Hello it is catalog</div>
+                <Catalog />
             </Route>
             <Route path="/cart">
-            <div>Hello it is cart</div>
+                <div>Hello it is cart</div>
             </Route>
             <Route path="/contact">
-            <div>Hello it is contact</div>
+                <div>Hello it is contact</div>
             </Route>
             <Route path="/">
-            <Home />
+                <Home />
             </Route>
         </Switch>
         </LinkingWrapper>

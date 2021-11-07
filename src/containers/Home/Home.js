@@ -6,7 +6,7 @@ import {
     StyledButton,
     CardWrapper,
     } from "./Home.styled";
-    import CardItem from "../../components/CardItem/CardItem";
+import CardItem from "../../components/CardItem/CardItem";
 
 const data = [
 {   
@@ -50,15 +50,15 @@ const Home = () => {
             </StyledText>
         </SectionWrapper>
         <CardWrapper>
-                {data.map(({ title, num_of_passangers, image, max_speed }, idx) => (
-            <CardItem
-                title={title}
-                num_of_passangers={num_of_passangers}
-                imageSrc={image}
-                max_speed={max_speed}
-                key={idx}
-            />
-            ))}
+                {data.map(({ title, num_of_passangers, image, max_speed, id}, idx) => (
+                    <CardItem
+                        title={title}
+                        num_of_passangers={num_of_passangers}
+                        imageSrc={image}
+                        max_speed={max_speed}
+                        key={id}
+                    />
+                ))}
         </CardWrapper>
         </div>
     );

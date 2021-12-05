@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import CatalogCard from "../Catalog/CatalogCard";
+import Loading from "../Loading/Loading";
 import NoDataText from "../NoDataText/NoDataText";
 
 const CatalogList = () => {
@@ -9,6 +10,10 @@ const CatalogList = () => {
   const filteredHelicopters = helicopters.filter((helicopter) =>
     helicopter.name.toLowerCase().includes(searchKeyword)
   );
+
+  if (!helicopters.length) {
+    return <Loading />
+  }
 
   return (
     <React.Fragment>
@@ -21,7 +26,7 @@ const CatalogList = () => {
           </div>
         </React.Fragment>
       ) : (
-        <NoDataText />
+        <NoDataText text="No data text"/>
       )}
     </React.Fragment>
   );

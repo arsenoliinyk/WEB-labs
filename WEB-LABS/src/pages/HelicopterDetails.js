@@ -4,9 +4,13 @@ import Button from "../components/Button/Button";
 import Wrapper from "../components/Cards/Wrapper";
 import Heading from "../components/Heading/Heading";
 import { GlobalContext } from "../context/GlobalState";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/actions";
 
 const HelicopterDetails = (route) => {
   let history = useHistory();
+
+  const dispatch = useDispatch();
 
   const { helicopters } = useContext(GlobalContext);
 
@@ -35,7 +39,7 @@ const HelicopterDetails = (route) => {
         <Heading helicopter={selectedHelicopter} />
         <div className="flex justify-end py-8">
           <Button label="Go back" onClick={() => history.push("/catalog")} />
-          <Button label="Add to cart" />
+          <Button label="Add to cart" onClick={() => dispatch(addToCart(selectedHelicopter))} />
         </div>
       </Wrapper>
     </div>

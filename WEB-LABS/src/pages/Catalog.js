@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import Wrapper from "../components/Cards/Wrapper";
 import CatalogList from "../components/Catalog/CatalogList";
-import Filters from "../components/Catalog/Filters";
+import Filters from "../components/Filters/Filters";
 import Loading from "../components/Loading/Loading";
 import { GlobalContext } from "../context/GlobalState";
 
 const Catalogue = () => {
-  const { isLoading } = useContext(GlobalContext);
+  const { helicopters } = useContext(GlobalContext);
 
-  if (isLoading) {
+  if (!helicopters.length) {
     return <Wrapper><Loading /></Wrapper>
   }
 
